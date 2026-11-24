@@ -1,0 +1,57 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "3522369a7d314aa8a8a4",
+  "position": {
+    "x": 20,
+    "y": 250,
+    "z": 3000,
+    "height": 300,
+    "width": 300
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Cómo leer",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Cada línea es un trimestre de desembolsos. Si las cosechas nuevas suben más rápido, el problema está en la originación, no en la cobranza.",
+                    "textStyle": {
+                      "fontSize": "11pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Selecciona Aliados en el filtro de canal para ver el cambio.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

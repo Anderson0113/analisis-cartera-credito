@@ -1,0 +1,126 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 568.13589409456347,
+            "y": 161.60207163737545
+          },
+          "nodeIndex": "Medidas",
+          "nodeLineageTag": "c88f17ba-f8d2-479b-9fdc-08a680e03fe7",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 334.13589409456347,
+            "y": 349.20414327475083
+          },
+          "nodeIndex": "Calendario",
+          "nodeLineageTag": "64f05cb3-813f-4660-8ee1-300e827fa53d",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 852.13589409456347,
+            "y": 211.60207163737545
+          },
+          "nodeIndex": "cosechas",
+          "nodeLineageTag": "82d799bb-0e49-4ba6-a825-60d011cf1e42",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 118.25898522144928
+          },
+          "nodeIndex": "creditos",
+          "nodeLineageTag": "0dfe24eb-ab7a-4ade-829c-bb764e5e381c",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 334.13007315461965,
+            "y": -50
+          },
+          "nodeIndex": "desempeno_mensual",
+          "nodeLineageTag": "8599e709-ec4f-41ec-b059-23a983419959",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1136.1358940945634,
+            "y": 223.60207163737545
+          },
+          "nodeIndex": "psi",
+          "nodeLineageTag": "45acc773-baa1-4207-bad3-1195c272f3d4",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1420.1358940945634,
+            "y": 211.60207163737545
+          },
+          "nodeIndex": "roll_rates",
+          "nodeLineageTag": "dde88764-6c2a-44c0-968a-81f116309c06",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1704.1358940945634,
+            "y": 199.60207163737545
+          },
+          "nodeIndex": "simulacion",
+          "nodeLineageTag": "a9108fb6-825c-4374-981f-8209e2c9f567",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas las tablas",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas las tablas",
+  "defaultDiagram": "Todas las tablas"
+}

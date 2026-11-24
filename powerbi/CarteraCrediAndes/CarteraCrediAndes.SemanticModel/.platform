@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "CarteraCrediAndes"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "16206e6b-5b73-4988-9bab-a90113f0b0d2"
+  }
+}

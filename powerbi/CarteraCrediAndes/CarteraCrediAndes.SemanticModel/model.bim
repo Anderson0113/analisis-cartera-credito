@@ -1,0 +1,775 @@
+{
+  "compatibilityLevel": 1606,
+  "model": {
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"creditos\",\"desempeno_mensual\",\"Calendario\",\"cosechas\",\"psi\",\"simulacion\",\"roll_rates\",\"Medidas\",\"RutaDatos\"]"
+      }
+    ],
+    "culture": "es-CO",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "RutaDatos",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"C:\\Users\\lina_\\OneDrive\\Documentos\\Freelance\\Portafolio_Cartera\\datos\" meta [IsParameterQuery = true, Type = \"Text\", IsParameterQueryRequired = true]",
+        "kind": "m",
+        "lineageTag": "d78f12cd-9c67-47f5-874d-3f61f276f3c2"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "769f59a2-e04e-457c-801f-3fcee6d34fe8",
+        "fromColumn": "id_credito",
+        "fromTable": "desempeno_mensual",
+        "toColumn": "id_credito",
+        "toTable": "creditos"
+      },
+      {
+        "name": "ec14ed3c-8ec8-47af-9341-beacf1fbdc13",
+        "fromColumn": "fecha_corte",
+        "fromTable": "desempeno_mensual",
+        "toColumn": "Fecha",
+        "toTable": "Calendario"
+      },
+      {
+        "name": "95d5c764-a8f8-41d7-8deb-94c6114c951d",
+        "fromColumn": "fecha_desembolso",
+        "fromTable": "creditos",
+        "isActive": false,
+        "toColumn": "Fecha",
+        "toTable": "Calendario"
+      }
+    ],
+    "sourceQueryCulture": "es-CO",
+    "tables": [
+      {
+        "name": "creditos",
+        "columns": [
+          {
+            "name": "id_credito",
+            "dataType": "string",
+            "lineageTag": "67dc21ef-5ee5-4caa-8af6-9d58249729ee",
+            "sourceColumn": "id_credito",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "fecha_desembolso",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "062e0c17-a3b7-471c-ae79-51cbce7572d9",
+            "sourceColumn": "fecha_desembolso",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "canal",
+            "dataType": "string",
+            "lineageTag": "fa925034-c270-4f82-bdac-34109160b1c3",
+            "sourceColumn": "canal",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "producto",
+            "dataType": "string",
+            "lineageTag": "361a98e8-aed0-42ee-8406-5f76ce3e567e",
+            "sourceColumn": "producto",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ciudad",
+            "dataCategory": "City",
+            "dataType": "string",
+            "lineageTag": "0c850e8c-7345-447c-b6a0-6d0efb845cbf",
+            "sourceColumn": "ciudad",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "score_originacion",
+            "dataType": "int64",
+            "lineageTag": "4fdc8594-6197-40ac-8424-aa28c7a9d0ed",
+            "sourceColumn": "score_originacion",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ingreso_mensual",
+            "dataType": "int64",
+            "formatString": "\\$ #,0",
+            "lineageTag": "999ef2f6-c87b-433c-aa8e-8a4afaf3e7f9",
+            "sourceColumn": "ingreso_mensual",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "edad",
+            "dataType": "int64",
+            "lineageTag": "0285db20-343a-4fa9-b328-ac9574a90e82",
+            "sourceColumn": "edad",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "monto_desembolsado",
+            "dataType": "int64",
+            "formatString": "\\$ #,0",
+            "lineageTag": "889e7184-0da9-40e6-bf24-b5b48c2e014e",
+            "sourceColumn": "monto_desembolsado",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "plazo_meses",
+            "dataType": "int64",
+            "lineageTag": "d0fd2a0b-1548-4d42-9b12-ab3af58c26dd",
+            "sourceColumn": "plazo_meses",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "tasa_ea",
+            "dataType": "double",
+            "formatString": "0.0 %;-0.0 %;0.0 %",
+            "lineageTag": "2b655794-0b5a-4e1f-9c01-683874856d0c",
+            "sourceColumn": "tasa_ea",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "banda_score",
+            "dataType": "string",
+            "lineageTag": "17718fe7-165c-478d-9c25-40fb62006043",
+            "sourceColumn": "banda_score",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "0dfe24eb-ab7a-4ade-829c-bb764e5e381c",
+        "partitions": [
+          {
+            "name": "creditos",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Origen = Csv.Document(File.Contents(RutaDatos & \"\\creditos.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),",
+                "    Tipos = Table.TransformColumnTypes(Encabezados, {{\"id_credito\", type text}, {\"fecha_desembolso\", type date}, {\"canal\", type text}, {\"producto\", type text}, {\"ciudad\", type text}, {\"score_originacion\", Int64.Type}, {\"ingreso_mensual\", Int64.Type}, {\"edad\", Int64.Type}, {\"monto_desembolsado\", Int64.Type}, {\"plazo_meses\", Int64.Type}, {\"tasa_ea\", type number}, {\"banda_score\", type text}}, \"en-US\")",
+                "in",
+                "    Tipos"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "desempeno_mensual",
+        "columns": [
+          {
+            "name": "id_credito",
+            "dataType": "string",
+            "lineageTag": "6738e224-e585-4d41-b506-87f920edd99a",
+            "sourceColumn": "id_credito",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "fecha_corte",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "49e03bde-6e8f-4ebe-a646-f6153bb6bce7",
+            "sourceColumn": "fecha_corte",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "meses_en_libros",
+            "dataType": "int64",
+            "lineageTag": "ead16542-a80f-4a22-827c-395b8a82ccb2",
+            "sourceColumn": "meses_en_libros",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "estado_mora",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "e50a795f-0153-4368-ba40-18f0a40b1814",
+            "sourceColumn": "estado_mora",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "saldo_capital",
+            "dataType": "int64",
+            "formatString": "\\$ #,0",
+            "lineageTag": "85f41889-31fd-4ac7-b1b0-6743a924e75d",
+            "sourceColumn": "saldo_capital",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "rango_mora",
+            "dataType": "string",
+            "lineageTag": "4496da5d-346e-4196-9005-80adf8c95a6a",
+            "sortByColumn": "estado_mora",
+            "sourceColumn": "rango_mora",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "8599e709-ec4f-41ec-b059-23a983419959",
+        "partitions": [
+          {
+            "name": "desempeno_mensual",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Origen = Csv.Document(File.Contents(RutaDatos & \"\\desempeno_mensual.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),",
+                "    Tipos = Table.TransformColumnTypes(Encabezados, {{\"id_credito\", type text}, {\"fecha_corte\", type date}, {\"meses_en_libros\", Int64.Type}, {\"estado_mora\", Int64.Type}, {\"saldo_capital\", Int64.Type}, {\"rango_mora\", type text}}, \"en-US\")",
+                "in",
+                "    Tipos"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Calendario",
+        "columns": [
+          {
+            "name": "Fecha",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "isKey": true,
+            "lineageTag": "429d671b-d524-4450-96fe-ba86f8d042aa",
+            "sourceColumn": "Fecha",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Año",
+            "dataType": "int64",
+            "lineageTag": "ec478604-3b85-4e7d-8f84-3582edee37cd",
+            "sourceColumn": "Año",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "MesNum",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "6beb8a02-0967-42c9-a001-e43a6a082023",
+            "sourceColumn": "MesNum",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Mes",
+            "dataType": "string",
+            "lineageTag": "73d5682b-5774-44fe-8d72-eb6a3449207a",
+            "sortByColumn": "MesNum",
+            "sourceColumn": "Mes",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Trimestre",
+            "dataType": "string",
+            "lineageTag": "e354222d-6027-453e-b152-63258a2cfec3",
+            "sourceColumn": "Trimestre",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Inicio de mes",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "mmm yyyy",
+            "lineageTag": "e6ca1e85-bb22-4820-a2f0-4a43e60da1da",
+            "sourceColumn": "Inicio de mes",
+            "summarizeBy": "none"
+          }
+        ],
+        "dataCategory": "Time",
+        "lineageTag": "64f05cb3-813f-4660-8ee1-300e827fa53d",
+        "partitions": [
+          {
+            "name": "Calendario",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Inicio = #date(2023, 1, 1),",
+                "    Fin = #date(2025, 12, 31),",
+                "    Fechas = List.Dates(Inicio, Duration.Days(Fin - Inicio) + 1, #duration(1, 0, 0, 0)),",
+                "    Tabla = Table.FromList(Fechas, Splitter.SplitByNothing(), {\"Fecha\"}),",
+                "    Tipo = Table.TransformColumnTypes(Tabla, {{\"Fecha\", type date}}),",
+                "    Anio = Table.AddColumn(Tipo, \"Año\", each Date.Year([Fecha]), Int64.Type),",
+                "    MesNum = Table.AddColumn(Anio, \"MesNum\", each Date.Year([Fecha]) * 100 + Date.Month([Fecha]), Int64.Type),",
+                "    NombresMes = {\"ene\", \"feb\", \"mar\", \"abr\", \"may\", \"jun\", \"jul\", \"ago\", \"sep\", \"oct\", \"nov\", \"dic\"},",
+                "    Mes = Table.AddColumn(MesNum, \"Mes\", each NombresMes{Date.Month([Fecha]) - 1} & \"-\" & Text.From(Date.Year([Fecha])), type text),",
+                "    Trimestre = Table.AddColumn(Mes, \"Trimestre\", each Text.From(Date.Year([Fecha])) & \" T\" & Text.From(Date.QuarterOfYear([Fecha])), type text),",
+                "    InicioMes = Table.AddColumn(Trimestre, \"Inicio de mes\", each Date.StartOfMonth([Fecha]), type date)",
+                "in",
+                "    InicioMes"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "cosechas",
+        "columns": [
+          {
+            "name": "canal",
+            "dataType": "string",
+            "lineageTag": "41564ae0-4edb-45ae-865a-477d6302a86b",
+            "sourceColumn": "canal",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Cosecha",
+            "dataType": "string",
+            "lineageTag": "4e409a81-b214-4967-b8a9-c3f51d7c23da",
+            "sourceColumn": "cosecha",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Meses desde el desembolso",
+            "dataType": "int64",
+            "lineageTag": "2b913fb0-cf1b-4756-9514-2b9586de0e6c",
+            "sourceColumn": "mes_en_libros",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "creditos",
+            "dataType": "int64",
+            "lineageTag": "6055e0b8-564c-4a7b-a3d7-8539d2234577",
+            "sourceColumn": "creditos",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "pct_alguna_vez_30",
+            "dataType": "double",
+            "formatString": "0.0 %;-0.0 %;0.0 %",
+            "lineageTag": "5291d686-ba12-4249-8ba3-5b2374ff71c3",
+            "sourceColumn": "pct_alguna_vez_30",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "82d799bb-0e49-4ba6-a825-60d011cf1e42",
+        "partitions": [
+          {
+            "name": "cosechas",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Origen = Csv.Document(File.Contents(RutaDatos & \"\\resultados\\cosechas.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),",
+                "    Tipos = Table.TransformColumnTypes(Encabezados, {{\"canal\", type text}, {\"cosecha\", type text}, {\"mes_en_libros\", Int64.Type}, {\"creditos\", Int64.Type}, {\"pct_alguna_vez_30\", type number}}, \"en-US\"),",
+                "    Paso0 = Table.ReplaceValue(Tipos, \"Q\", \" T\", Replacer.ReplaceText, {\"cosecha\"})",
+                "in",
+                "    Paso0"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "psi",
+        "columns": [
+          {
+            "name": "Canal",
+            "dataType": "string",
+            "lineageTag": "beb10f4d-4b84-404e-8991-344501ff337f",
+            "sourceColumn": "canal",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Variable",
+            "dataType": "string",
+            "lineageTag": "432ec99a-3ba2-459f-a993-1057075debe4",
+            "sourceColumn": "variable",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "psi",
+            "dataType": "double",
+            "formatString": "0.00",
+            "lineageTag": "9484cca1-9043-4994-956d-3e185b4e759b",
+            "sourceColumn": "psi",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Diagnóstico",
+            "dataType": "string",
+            "lineageTag": "psi-diagnostico",
+            "sourceColumn": "Diagnóstico",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "45acc773-baa1-4207-bad3-1195c272f3d4",
+        "partitions": [
+          {
+            "name": "psi",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Origen = Csv.Document(File.Contents(RutaDatos & \"\\resultados\\psi.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),",
+                "    Tipos = Table.TransformColumnTypes(Encabezados, {{\"canal\", type text}, {\"variable\", type text}, {\"psi\", type number}}, \"en-US\"),",
+                "    Paso0 = Table.TransformColumns(Tipos, {{\"variable\", each Record.FieldOrDefault([score_originacion = \"Score de originación\", ingreso_mensual = \"Ingreso mensual\", edad = \"Edad\", monto_desembolsado = \"Monto desembolsado\", plazo_meses = \"Plazo\"], _, _), type text}}),",
+                "    Paso1 = Table.AddColumn(Paso0, \"Diagnóstico\", each if [psi] < 0.1 then \"Estable\" else if [psi] < 0.25 then \"Revisar\" else \"Cambio significativo\", type text)",
+                "in",
+                "    Paso1"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "simulacion",
+        "columns": [
+          {
+            "name": "Score mínimo",
+            "dataType": "string",
+            "lineageTag": "52fc8a6b-d7fa-449e-bc69-ab6f42e920e7",
+            "sortByColumn": "orden",
+            "sourceColumn": "score_minimo",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "pct_volumen_aprobado",
+            "dataType": "double",
+            "formatString": "0.0 %;-0.0 %;0.0 %",
+            "lineageTag": "369919f4-427c-4052-8221-0472c64f7a20",
+            "sourceColumn": "pct_volumen_aprobado",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "mora_30_6m",
+            "dataType": "double",
+            "formatString": "0.0 %;-0.0 %;0.0 %",
+            "lineageTag": "0380b381-b7cf-46bd-b136-2927685b1a85",
+            "sourceColumn": "mora_30_6m",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "creditos_aprobados",
+            "dataType": "int64",
+            "lineageTag": "84ae8827-9550-46ce-8d0c-2eb8d15ea173",
+            "sourceColumn": "creditos_aprobados",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "referencia_otros_canales",
+            "dataType": "double",
+            "formatString": "0.0 %;-0.0 %;0.0 %",
+            "lineageTag": "3d715e67-c532-4104-84e3-cc19f9ffb46e",
+            "sourceColumn": "referencia_otros_canales",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "orden",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "sim-orden",
+            "sourceColumn": "orden",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "a9108fb6-825c-4374-981f-8209e2c9f567",
+        "partitions": [
+          {
+            "name": "simulacion",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Origen = Csv.Document(File.Contents(RutaDatos & \"\\resultados\\simulacion_corte_score.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),",
+                "    Tipos = Table.TransformColumnTypes(Encabezados, {{\"score_minimo\", type text}, {\"pct_volumen_aprobado\", type number}, {\"mora_30_6m\", type number}, {\"creditos_aprobados\", Int64.Type}, {\"referencia_otros_canales\", type number}}, \"en-US\"),",
+                "    Paso0 = Table.AddColumn(Tipos, \"orden\", each if [score_minimo] = \"Sin corte\" then 0 else Number.From([score_minimo]), Int64.Type),",
+                "    Paso1 = Table.TransformColumns(Paso0, {{\"score_minimo\", each if _ = \"Sin corte\" then _ else \"≥ \" & _, type text}})",
+                "in",
+                "    Paso1"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "roll_rates",
+        "columns": [
+          {
+            "name": "estado_desde",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "b824ea10-19c4-4579-aa6f-3f86e779fec6",
+            "sourceColumn": "estado_desde",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "estado_hasta",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "65f0e6c9-1450-407d-880a-51b735f3ae2d",
+            "sourceColumn": "estado_hasta",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "probabilidad",
+            "dataType": "double",
+            "formatString": "0 %",
+            "lineageTag": "0ec510c2-6200-4ab3-bade-0bbc0a4ccd5d",
+            "sourceColumn": "probabilidad",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Mes actual",
+            "dataType": "string",
+            "lineageTag": "6419b1f0-5aa2-4c0b-9f55-97265c44d5f7",
+            "sortByColumn": "estado_desde",
+            "sourceColumn": "Mes actual",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Mes siguiente",
+            "dataType": "string",
+            "lineageTag": "aaa43721-262f-4f4c-95bb-a6f20b6ddde0",
+            "sortByColumn": "estado_hasta",
+            "sourceColumn": "Mes siguiente",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "dde88764-6c2a-44c0-968a-81f116309c06",
+        "partitions": [
+          {
+            "name": "roll_rates",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Origen = Csv.Document(File.Contents(RutaDatos & \"\\resultados\\roll_rates.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),",
+                "    Despivote = Table.UnpivotOtherColumns(Encabezados, {\"estado_mora\"}, \"estado_hasta\", \"probabilidad\"),",
+                "    Renombre = Table.RenameColumns(Despivote, {{\"estado_mora\", \"estado_desde\"}}),",
+                "    Tipos = Table.TransformColumnTypes(Renombre, {{\"estado_desde\", Int64.Type}, {\"estado_hasta\", Int64.Type}, {\"probabilidad\", type number}}, \"en-US\"),",
+                "    Etiquetas = {\"Al día\", \"1-30\", \"31-60\", \"61-90\", \"91-120\", \"121-150\", \"151-180\", \"Castigo\", \"Pagado\"},",
+                "    Desde = Table.AddColumn(Tipos, \"Mes actual\", each Etiquetas{[estado_desde]}, type text),",
+                "    Hasta = Table.AddColumn(Desde, \"Mes siguiente\", each Etiquetas{[estado_hasta]}, type text)",
+                "in",
+                "    Hasta"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Medidas",
+        "columns": [
+          {
+            "name": "_",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "4528da21-1153-4826-b56d-ca5e197aecaf",
+            "sourceColumn": "_",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "c88f17ba-f8d2-479b-9fdc-08a680e03fe7",
+        "measures": [
+          {
+            "name": "Cartera Bruta",
+            "displayFolder": "Cartera",
+            "expression": "CALCULATE ( SUM ( desempeno_mensual[saldo_capital] ), desempeno_mensual[estado_mora] <= 6 )",
+            "formatString": "\\$ #,0",
+            "lineageTag": "8d9c3f67-6b1c-42af-a046-a7b7df2eebba"
+          },
+          {
+            "name": "Cartera Vencida 30+",
+            "displayFolder": "Cartera",
+            "expression": "CALCULATE ( SUM ( desempeno_mensual[saldo_capital] ), desempeno_mensual[estado_mora] >= 2, desempeno_mensual[estado_mora] <= 6 )",
+            "formatString": "\\$ #,0",
+            "lineageTag": "eda7e217-1aef-4595-a0ae-bca09726ffec"
+          },
+          {
+            "name": "Cartera Mora 90+",
+            "displayFolder": "Cartera",
+            "expression": "CALCULATE ( SUM ( desempeno_mensual[saldo_capital] ), desempeno_mensual[estado_mora] >= 4, desempeno_mensual[estado_mora] <= 6 )",
+            "formatString": "\\$ #,0",
+            "lineageTag": "d8badce3-d76f-48f4-a2b0-1accfdc75622"
+          },
+          {
+            "name": "ICV 30+",
+            "displayFolder": "Indicadores",
+            "expression": "DIVIDE ( [Cartera Vencida 30+], [Cartera Bruta] )",
+            "formatString": "0.0 %;-0.0 %;0.0 %",
+            "lineageTag": "c4218bbb-f832-45d2-8f3a-c8ad4a2975a3"
+          },
+          {
+            "name": "Mora 90+",
+            "displayFolder": "Indicadores",
+            "expression": "DIVIDE ( [Cartera Mora 90+], [Cartera Bruta] )",
+            "formatString": "0.0 %;-0.0 %;0.0 %",
+            "lineageTag": "d202b49a-5354-4886-9d05-853d01b31fe6"
+          },
+          {
+            "name": "Créditos Activos",
+            "displayFolder": "Cartera",
+            "expression": "CALCULATE ( DISTINCTCOUNT ( desempeno_mensual[id_credito] ), desempeno_mensual[estado_mora] <= 6 )",
+            "formatString": "#,0",
+            "lineageTag": "794af516-d466-4cc2-81c1-edc718d5472d"
+          },
+          {
+            "name": "Castigos",
+            "displayFolder": "Cartera",
+            "expression": "CALCULATE ( SUM ( desempeno_mensual[saldo_capital] ), desempeno_mensual[estado_mora] = 7 )",
+            "formatString": "\\$ #,0",
+            "lineageTag": "1f2a1b18-099b-463c-a7cb-9fd40f14d5bc"
+          },
+          {
+            "name": "Desembolsos",
+            "displayFolder": "Cartera",
+            "expression": "CALCULATE ( SUM ( creditos[monto_desembolsado] ), USERELATIONSHIP ( creditos[fecha_desembolso], Calendario[Fecha] ) )",
+            "formatString": "\\$ #,0",
+            "lineageTag": "a3ef7043-39b3-4f0c-a483-70c6205f50c0"
+          },
+          {
+            "name": "Último Corte",
+            "displayFolder": "Indicadores",
+            "expression": "CALCULATE ( MAX ( desempeno_mensual[fecha_corte] ), ALL ( Calendario ) )",
+            "formatString": "mmm yyyy",
+            "lineageTag": "e5e147c0-3799-4f88-b8e9-e9a68197f1f5"
+          },
+          {
+            "name": "Cartera Bruta (último corte)",
+            "displayFolder": "Último corte",
+            "expression": "VAR u = [Último Corte] RETURN CALCULATE ( [Cartera Bruta], Calendario[Fecha] = u )",
+            "formatString": "\\$ #,0",
+            "lineageTag": "516869d4-c17c-49a6-b022-91061985311e"
+          },
+          {
+            "name": "ICV 30+ (último corte)",
+            "displayFolder": "Último corte",
+            "expression": "VAR u = [Último Corte] RETURN CALCULATE ( [ICV 30+], Calendario[Fecha] = u )",
+            "formatString": "0.0 %;-0.0 %;0.0 %",
+            "lineageTag": "525ada6d-7919-4eb4-98cd-eeaef37352ae"
+          },
+          {
+            "name": "Mora 90+ (último corte)",
+            "displayFolder": "Último corte",
+            "expression": "VAR u = [Último Corte] RETURN CALCULATE ( [Mora 90+], Calendario[Fecha] = u )",
+            "formatString": "0.0 %;-0.0 %;0.0 %",
+            "lineageTag": "8c9e08ac-c500-4cdf-a860-5d0344e55d78"
+          },
+          {
+            "name": "Créditos Activos (último corte)",
+            "displayFolder": "Último corte",
+            "expression": "VAR u = [Último Corte] RETURN CALCULATE ( [Créditos Activos], Calendario[Fecha] = u )",
+            "formatString": "#,0",
+            "lineageTag": "69aa6080-5770-4c9b-b7b5-42807fe2c5d8"
+          },
+          {
+            "name": "ICV 30+ hace 12 meses",
+            "displayFolder": "Último corte",
+            "expression": "VAR u = EDATE ( [Último Corte], -12 ) RETURN CALCULATE ( [ICV 30+], Calendario[Fecha] = u )",
+            "formatString": "0.0 %;-0.0 %;0.0 %",
+            "lineageTag": "ca6fbe04-7f4d-40da-a7ad-67119f2d20a6"
+          },
+          {
+            "name": "Var ICV 30+ 12M (pp)",
+            "displayFolder": "Último corte",
+            "expression": "( [ICV 30+ (último corte)] - [ICV 30+ hace 12 meses] ) * 100",
+            "formatString": "+0.0 \"pp\";-0.0 \"pp\"",
+            "lineageTag": "5bcf1dcb-7f81-4812-a7f2-c21e6787629f"
+          },
+          {
+            "name": "Mora 30+ cosecha",
+            "displayFolder": "Análisis",
+            "expression": "AVERAGE ( cosechas[pct_alguna_vez_30] )",
+            "formatString": "0.0 %;-0.0 %;0.0 %",
+            "lineageTag": "1fc1ab71-6d67-4cb1-a061-0da5d7bd8234"
+          },
+          {
+            "name": "PSI",
+            "displayFolder": "Análisis",
+            "expression": "SUM ( psi[psi] )",
+            "formatString": "0.00",
+            "lineageTag": "c369d471-d093-48ff-9251-62d20f809020"
+          },
+          {
+            "name": "Probabilidad de rodamiento",
+            "displayFolder": "Análisis",
+            "expression": "SUM ( roll_rates[probabilidad] )",
+            "formatString": "0 %",
+            "lineageTag": "16293828-43ff-4a5c-a31d-374895fe96f4"
+          },
+          {
+            "name": "Mora 30+ 6 meses (simulada)",
+            "displayFolder": "Análisis",
+            "expression": "SUM ( simulacion[mora_30_6m] )",
+            "formatString": "0.0 %;-0.0 %;0.0 %",
+            "lineageTag": "f3debf9d-1727-449b-a0b0-207c14b8e8de"
+          },
+          {
+            "name": "Volumen aprobado (simulado)",
+            "displayFolder": "Análisis",
+            "expression": "SUM ( simulacion[pct_volumen_aprobado] )",
+            "formatString": "0 %",
+            "lineageTag": "91879af0-a9f9-4a83-b489-e808762f98e5"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Medidas",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Origen = #table(type table [_ = text], {})",
+                "in",
+                "    Origen"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

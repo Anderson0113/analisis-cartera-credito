@@ -1,0 +1,16 @@
+canal,variable,psi
+Aliados,score_originacion,0.7312846463762496
+Aliados,ingreso_mensual,0.7140293400967059
+Aliados,edad,1.2352058757138837
+Aliados,monto_desembolsado,0.38129944334361443
+Aliados,plazo_meses,0.012310610625534277
+Digital,score_originacion,0.0011297396150062385
+Digital,ingreso_mensual,0.007597188454934142
+Digital,edad,0.004917274913254218
+Digital,monto_desembolsado,0.01084898692334901
+Digital,plazo_meses,0.0016535242170393006
+Oficina,score_originacion,0.014446686085466953
+Oficina,ingreso_mensual,0.024382269736322987
+Oficina,edad,0.018137371583581703
+Oficina,monto_desembolsado,0.014545658290118536
+Oficina,plazo_meses,0.008203793068855618
